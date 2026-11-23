@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Elegance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><h1>Elegance</h1></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#products">Productos</a></li>
+                    <li><a href="index.html#categories">Categorías</a></li>
+                    <li><a href="index.html#about">Nosotros</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="carrito.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="cuenta.html" class="user-icon" id="userIcon">
+                        <i class="fas fa-user"></i>
+                        <span id="userLabel">Mi Cuenta</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CARRITO -->
+    <main class="page-main">
+        <div class="container">
+            <h2 class="page-title">Tu Carrito de Compras</h2>
+
+            <div class="cart-layout">
+                <div class="cart-list" id="cartList"></div>
+
+                <aside class="cart-summary">
+                    <h3>Resumen del Pedido</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$<span id="subtotal">0.00</span></span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="shipping">$0.00</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span>$<span id="total">0.00</span></span>
+                    </div>
+                    <button class="btn-primary" id="checkoutBtn">Proceder al Pago</button>
+                    <a href="index.html" class="btn-secondary">Seguir Comprando</a>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elegance. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

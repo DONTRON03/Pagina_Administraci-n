@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - Elegance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><h1>Elegance</h1></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#products">Productos</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="carrito.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="cuenta.html" class="user-icon" id="userIcon">
+                        <i class="fas fa-user"></i>
+                        <span id="userLabel">Mi Cuenta</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- PAGO -->
+    <main class="page-main">
+        <div class="container">
+            <h2 class="page-title">Finalizar Compra</h2>
+
+            <div class="checkout-layout">
+                <form class="checkout-form" id="checkoutForm" novalidate>
+                    <h3><i class="fas fa-truck"></i> Datos de Envío</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nombre completo</label>
+                            <input type="text" id="shipName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="shipEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Dirección</label>
+                        <input type="text" id="shipAddress" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ciudad</label>
+                            <input type="text" id="shipCity" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Código Postal</label>
+                            <input type="text" id="shipZip" required>
+                        </div>
+                    </div>
+
+                    <h3><i class="fas fa-credit-card"></i> Método de Pago</h3>
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card" checked>
+                            <span><i class="fas fa-credit-card"></i> Tarjeta</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="paypal">
+                            <span><i class="fab fa-paypal"></i> PayPal</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cash">
+                            <span><i class="fas fa-money-bill-wave"></i> Efectivo</span>
+                        </label>
+                    </div>
+
+                    <div id="cardFields">
+                        <div class="form-group">
+                            <label>Número de Tarjeta</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Fecha Expiración</label>
+                                <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Pagar Ahora</button>
+                </form>
+
+                <aside class="cart-summary">
+                    <h3>Tu Pedido</h3>
+                    <div id="orderItems"></div>
+                    <div class="summary-row total-row">
+                        <span>Total a Pagar</span>
+                        <span>$<span id="checkoutTotal">0.00</span></span>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL CONFIRMACIÓN -->
+    <div class="modal" id="successModal">
+        <div class="modal-content text-center">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>¡Pago Exitoso!</h2>
+            <p>Tu pedido ha sido procesado correctamente.</p>
+            <p class="order-num">Número de pedido: <strong id="orderNumber"></strong></p>
+            <a href="index.html" class="btn-primary">Volver al Inicio</a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elegance. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

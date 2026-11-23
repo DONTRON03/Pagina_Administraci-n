@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance - Tienda de Ropa Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo"><h1>Elegance</h1></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#categories">Categorías</a></li>
+                    <li><a href="#about">Nosotros</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="carrito.html" class="cart-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                    <a href="cuenta.html" class="user-icon" id="userIcon">
+                        <i class="fas fa-user"></i>
+                        <span id="userLabel">Mi Cuenta</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Elegancia Redefinida</h1>
+            <p>Descubre nuestra nueva colección de moda exclusiva</p>
+            <a href="#products" class="cta-button">Explorar Colección</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Fashion">
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Categorías</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterProducts('women')">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&q=80" alt="Mujer">
+                    <h3>Mujer</h3>
+                </div>
+                <div class="category-card" onclick="filterProducts('men')">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Hombre">
+                    <h3>Hombre</h3>
+                </div>
+                <div class="category-card" onclick="filterProducts('accessories')">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=400&q=80" alt="Accesorios">
+                    <h3>Accesorios</h3>
+                </div>
+                <div class="category-card" onclick="filterProducts('shoes')">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=400&q=80" alt="Zapatos">
+                    <h3>Zapatos</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Productos Destacados</h2>
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="women">Mujer</button>
+                <button class="filter-btn" data-filter="men">Hombre</button>
+                <button class="filter-btn" data-filter="accessories">Accesorios</button>
+                <button class="filter-btn" data-filter="shoes">Zapatos</button>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Sobre Elegance</h2>
+            <p>En Elegance creemos que la moda es una forma de expresión personal. Ofrecemos las últimas tendencias y piezas atemporales de alta calidad.</p>
+            <div class="about-features">
+                <div class="feature"><i class="fas fa-shipping-fast"></i><h3>Envío Gratis</h3><p>En compras +$100</p></div>
+                <div class="feature"><i class="fas fa-undo"></i><h3>Devolución Fácil</h3><p>30 días</p></div>
+                <div class="feature"><i class="fas fa-shield-alt"></i><h3>Compra Segura</h3><p>100% seguro</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Elegance</h3>
+                    <p>Tu destino para la moda elegante.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="carrito.html">Carrito</a></li>
+                        <li><a href="cuenta.html">Mi Cuenta</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-envelope"></i> info@elegance.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Elegance. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
